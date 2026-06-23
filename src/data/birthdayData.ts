@@ -1,5 +1,5 @@
 export const birthdayData = {
-  friendName: "Nama Teman",
+  friendName: "Sherly Lyn",
   mainWish:
     "Happy Birthday! Semoga hari ini jadi salah satu hari paling hangat, lucu, dan penuh hal kecil yang bikin kamu senyum.",
   memories: [
