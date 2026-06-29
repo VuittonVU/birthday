@@ -108,28 +108,49 @@ body {
 .memory-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 32px;
+  gap: 28px;
+  align-items: stretch;
 }
 
 .memory-box {
-  height: 250px;
+  min-height: 360px;
   border-radius: 30px;
-  background:
-    radial-gradient(circle at 15% 10%, rgba(205, 233, 230, 0.7), transparent 28%),
-    radial-gradient(circle at 90% 20%, rgba(255, 221, 229, 0.8), transparent 30%),
-    rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.72);
   box-shadow: 0 28px 45px rgba(129, 86, 76, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
+  justify-content: flex-start;
   transition: 0.25s;
-  padding: 20px;
+  padding: 14px 14px 18px;
+  overflow: visible;
 }
 
-.memory-box:hover {
-  transform: translateY(-10px);
+.memory-box:hover{
+    transform:translateY(-10px);
+}
+
+.memory-photo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 22px;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.memory-caption {
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #6d4b44;
+  line-height: 1.45;
 }
 
 .memory-icon {
@@ -420,5 +441,40 @@ body {
 
   .letter-card {
     min-height: 180px;
+  }
+}
+
+@media (max-width: 900px) {
+  .memory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .memory-box {
+    min-height: 330px;
+  }
+
+  .memory-photo {
+    height: 210px;
+  }
+}
+
+@media (max-width: 640px) {
+  .memory-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .memory-box {
+    min-height: 310px;
+  }
+
+  .memory-photo {
+    height: 200px;
+  }
+
+  .memory-caption {
+    font-size: 13px;
+    min-height: 60px;
   }
 }

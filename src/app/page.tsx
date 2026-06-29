@@ -202,13 +202,16 @@ export default function Home() {
                 </motion.div>
 
                 <motion.div
-                  animate={{ y: [0, -18, 0] }}
+                  animate={{ y: [0, -12, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  className="text-center"
+                  className="flex justify-center"
                 >
-                  <div className="text-[8rem] leading-none sm:text-[14rem]">
-                    🧸
-                  </div>
+                  <img
+                    src="/images/memory-thumbnail.jpeg"
+                    alt="Hirono"
+                    className="w-50 sm:w-64s md:w-[420px] drop-shadow-2xl select-none pointer-events-none"
+                    draggable={false}
+                  />
                 </motion.div>
               </div>
             </section>
@@ -248,8 +251,15 @@ export default function Home() {
                           </>
                         ) : (
                           <>
-                            <div className="mb-2 text-5xl sm:text-6xl">📷</div>
-                            <p>{memory.caption}</p>
+                            <img
+                              src={memory.image}
+                              alt={`Memory ${index + 1}`}
+                              className="memory-photo"
+                            />
+
+                            <div className="memory-caption">
+                              {memory.caption}
+                            </div>
                           </>
                         )}
                       </button>
@@ -375,7 +385,7 @@ export default function Home() {
                             alt="Random Hirono-style blind box"
                             className="blind-box-image"
                           />
-                          <p>Random Hirono-style blind box</p>
+                          <p>Hirono Blind Box</p>
                         </>
                       )}
                     </motion.div>
